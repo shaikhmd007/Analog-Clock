@@ -1,0 +1,74 @@
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: white;
+}
+
+html::before,
+html::after {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 100px;
+    transform-origin: center calc(100% - 10px);
+    top: calc(50% - 100px);
+    animation: clockMovement 3600s infinite linear;
+    background: linear-gradient(145deg, #441def, #0400e6);
+    box-shadow: 1px 1px 10px #3008d2;
+}
+
+html::after {
+
+    background: linear-gradient(145deg, #0aff05, #08e605);
+    box-shadow: 5px 5px 10px #07d404;
+    height: 150px;
+    top: calc(50% - 150px);
+    animation: clockMovement 60s infinite linear;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #f0f0f0, #cacaca);
+    box-shadow: 17px 17px 91px #8d8d8d,
+        -17px -17px 91px #ffffff;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    /* background: green; */
+    width: 5px;
+    height: 50px;
+    transform-origin: center calc(100% - 10px);
+    top: calc(50% - 50px);
+    animation: clockMovement 43300s infinite linear;
+    background: linear-gradient(145deg, #28fff8, #f4f6f7);
+    box-shadow: 18px 18px 35px #150503,
+        -18px -18px 35px #00ffff;
+}
+
+@keyframes clockMovement {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
